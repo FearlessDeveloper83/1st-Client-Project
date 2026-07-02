@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Punjabi Khana | Authentic Punjabi Vegetarian Food in Nehru Place</title>
+<meta name="description" content="Authentic Punjabi vegetarian food in Nehru Place, New Delhi. Dine-in, takeout & delivery. Open daily 11 AM - 8 PM.">
+<link rel="preconnect" href="fonts.googleapis.com">
+<link href="fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron: #F0932B;
+    --saffron-dark: #D97B1A;
+    --tandoori-red: #C1272D;
+    --tandoori-red-dark: #9E1F24;
+    --coriander-brown: #6B3F2A;
+    --dark-brown: #2B1A10;
+    --cream: #FFF6EC;
+    --cream-dark: #FDEBD8;
+    --white: #FFFFFF;
+    --text-dark: #2B1A10;
+    --text-light: #7A6350;
+    --radius: 14px;
+    --shadow: 0 10px 30px rgba(43, 26, 16, 0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    background: var(--cream);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .display-font {
+    font-family: 'Alfa Slab One', serif;
+    line-height: 1.25;
+    color: var(--dark-brown);
+  }
+
+  a { text-decoration: none; color: inherit; }
+  ul { list-style: none; }
+  img { max-width: 100%; height: auto; display: block; }
+
+  .container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 14px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.98rem;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    white-space: nowrap;
+    text-align: center;
+  }
+  .btn:hover { transform: translateY(-2px); }
+
+  .btn-primary {
+    background: var(--tandoori-red);
+    color: var(--white);
+    box-shadow: 0 8px 20px rgba(193, 39, 45, 0.35);
+  }
+  .btn-primary:hover { background: var(--tandoori-red-dark); }
+
+  .btn-outline {
+    background: transparent;
+    border-color: var(--white);
+    color: var(--white);
+  }
+  .btn-outline:hover { background: rgba(255,255,255,0.15); }
+
+  .btn-outline-dark {
+    background: transparent;
+    border-color: var(--tandoori-red);
+    color: var(--tandoori-red);
+  }
+  .btn-outline-dark:hover { background: var(--tandoori-red); color: var(--white); }
+
+  .section-tag {
+    display: inline-block;
+    background: var(--cream-dark);
+    color: var(--tandoori-red);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 14px;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    margin-bottom: 12px;
+  }
+
+  .section-sub {
+    color: var(--text-light);
+    max-width: 560px;
+    margin-bottom: 40px;
+    font-size: 1.02rem;
+  }
+
+  .center { text-align: center; margin-left: auto; margin-right: auto; }
+
+  /* ---------- TOP BANNER ---------- */
+  .top-banner {
+    background: var(--dark-brown);
+    color: var(--white);
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    letter-spacing: 0.5px;
+  }
+  .top-banner img {
+    height: 24px;
+    border-radius: 4px;
+  }
+
+  /* ---------- HEADER ---------- */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--white);
+    box-shadow: 0 2px 12px rgba(43,26,16,0.08);
+  }
+
+  .nav-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Alfa Slab One', serif;
+    font-size: 1.3rem;
+    color: var(--tandoori-red);
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+  .nav-links a { position: relative; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--tandoori-red); }
+
+  .nav-cta { display: flex; align-items: center; gap: 14px; }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 8px; /* Increased touch area */
+  }
+  .hamburger span {
+    width: 26px;
+    height: 3px;
+    background: var(--dark-brown);
+    border-radius: 2px;
+    transition: 0.3s ease;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    background:
+      linear-gradient(120deg, rgba(43,26,16,0.78), rgba(193,39,45,0.55)),
+      url('placehold.co/hero-punjabi-spread.png') center/cover no-repeat;
+    color: var(--white);
+  }
+
+  .hero-content { max-width: 640px; }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(4px);
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 6vw, 3.4rem);
+    color: var(--white);
+    margin-bottom: 18px;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    color: #FBEDE1;
+    margin-bottom: 32px;
+    max-width: 520px;
+  }
+
+  .hero-btns { display: flex; flex-wrap: wrap; gap: 16px; }
+
+  /* ---------- WHY CHOOSE US ---------- */
+  .features {
+    background: var(--white);
+    padding: 90px 0 70px;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .feature-card {
+    background: var(--cream);
+    border-radius: var(--radius);
+    padding: 32px 22px;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .feature-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+
+  .feature-icon {
+    font-size: 2.4rem;
+    margin-bottom: 14px;
+  }
+
+  .feature-card h3 {
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+    color: var(--dark-brown);
+  }
+
+  .feature-card p { font-size: 0.9rem; color: var(--text-light); }
+
+  /* ---------- MENU HIGHLIGHTS ---------- */
+  .menu-section {
+    padding: 90px 0;
+    background: var(--cream);
+  }
+
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 26px;
+  }
+
+  .menu-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease;
+  }
+  .menu-card:hover { transform: translateY(-6px); }
+
+  .menu-card img { height: 190px; width: 100%; object-fit: cover; }
+
+  .menu-card-body { padding: 20px; }
+
+  .menu-card h3 {
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: var(--tandoori-red);
+  }
+
+  .menu-card p { font-size: 0.9rem; color: var(--text-light); margin-bottom: 12px; }
+
+  .menu-tag {
+    display: inline-block;
+    background: var(--cream-dark);
+    color: var(--saffron-dark);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 50px;
+  }
+
+  /* ---------- FULL MENU LIST ---------- */
+  .full-menu-section {
+    padding: 90px 0;
+    background: var(--white);
+  }
+
+  .full-menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    margin-top: 40px;
+  }
+
+  .menu-category {
+    margin-bottom: 40px;
+  }
+
+  .menu-category h3 {
+    font-size: 1.5rem;
+    color: var(--tandoori-red);
+    border-bottom: 2px solid var(--cream-dark);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .menu-list-item {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 12px;
+  }
+
+  .item-name {
+    flex: 0 1 auto;
+    font-weight: 500;
+    font-size: 1.05rem;
+  }
+
+  .item-dots {
+    flex: 1 1 auto;
+    border-bottom: 2px dotted var(--text-light);
+    margin: 0 12px 6px 12px;
+    opacity: 0.5;
+  }
+
+  .item-price {
+    flex: 0 1 auto;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--saffron-dark);
+  }
+
+  .menu-cta { margin-top: 50px; }
+
+  /* ---------- TESTIMONIALS ---------- */
+  .testimonial {
+    background: linear-gradient(135deg, var(--tandoori-red), var(--saffron-dark));
+    color: var(--white);
+    padding: 80px 0;
+    text-align: center;
+  }
+
+  .rating-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255,255,255,0.15);
+    padding: 12px 26px;
+    border-radius: 50px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  .stars { color: #FFD966; font-size: 1.3rem; letter-spacing: 2px; }
+
+  .testimonial blockquote {
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    font-style: italic;
+    max-width: 720px;
+    margin: 0 auto 20px;
+    font-weight: 500;
+  }
+
+  .testimonial cite {
+    font-style: normal;
+    font-weight: 600;
+    opacity: 0.9;
+    font-size: 0.95rem;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    background: var(--dark-brown);
+    color: #E9DCCF;
+    padding: 70px 0 24px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr 1fr 1.4fr;
+    gap: 40px;
+    margin-bottom: 50px;
+  }
+
+  .footer-col h4 {
+    font-family: 'Poppins';
+    color: var(--white);
+    font-weight: 700;
+    margin-bottom: 18px;
+    font-size: 1.05rem;
+  }
+
+  .footer-col p, .footer-col li { font-size: 0.9rem; color: #C9B6A4; margin-bottom: 10px; }
+
+  .footer-col a:hover { color: var(--saffron); }
+
+  .footer-logo {
+    font-family: 'Alfa Slab One', serif;
+    font-size: 1.3rem;
+    color: var(--white);
+    margin-bottom: 14px;
+  }
+
+  .map-embed {
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 3px solid rgba(255,255,255,0.08);
+  }
+  .map-embed iframe { width: 100%; height: 220px; border: 0; display: block; }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 24px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #A28F7C;
+  }
+
+  /* ---------- MOBILE STICKY CTA BAR ---------- */
+  .mobile-cta-bar {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 998;
+    background: var(--white);
+    box-shadow: 0 -6px 20px rgba(0,0,0,0.12);
+    padding: 12px 16px;
+    padding-bottom: env(safe-area-inset-bottom, 12px); /* Accounts for modern phone notches */
+  }
+  .mobile-cta-bar .row { display: flex; gap: 12px; }
+  .mobile-cta-bar .btn { flex: 1; text-align: center; padding: 13px 10px; font-size: 0.9rem;}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 1024px) {
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .menu-grid { grid-template-columns: repeat(2, 1fr); }
+    .full-menu-grid { gap: 30px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 768px) {
+    .nav-links, .nav-cta .btn-outline-dark, .nav-cta .btn-primary { display: none; }
+    .hamburger { display: flex; }
+
+    /* Mobile optimized padding */
+    .features, .menu-section, .full-menu-section, .testimonial, footer { padding: 50px 0; }
+    
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0; right: 0;
+      background: var(--white);
+      padding: 20px 24px;
+      gap: 18px;
+      box-shadow: 0 12px 20px rgba(0,0,0,0.08);
+      border-top: 1px solid var(--cream-dark);
+    }
+
+    .hero { min-height: 70vh; text-align: left; }
+    .hero-btns .btn { width: 100%; text-align: center; }
+    .hero-btns { flex-direction: column; }
+    .hero p { font-size: 1rem; }
+
+    .full-menu-grid { grid-template-columns: 1fr; }
+
+    .mobile-cta-bar { display: block; }
+    body { padding-bottom: 74px; } /* Prevent footer from hiding behind CTA bar */
+  }
+
+  @media (max-width: 560px) {
+    .features-grid { grid-template-columns: 1fr; }
+    .menu-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+    .rating-badge { flex-direction: column; gap: 8px; text-align: center; }
+    
+    .section-title { font-size: 1.8rem; }
+    .hero h1 { font-size: 2.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-banner">
+  <span>Also available for home delivery on</span>
+  <img src="Zomato.png" alt="Zomato">
+  <img src="Swiggy.png" alt="Swiggy">
+</div>
+
+<header>
+  <div class="container nav-wrap">
+    <a href="#home" class="logo">
+      🍛 Punjabi Khana
+    </a>
+
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#highlights">Signature Dishes</a></li>
+        <li><a href="#full-menu">Full Menu</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#location">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-cta">
+      <a href="tel:+919711369617" class="btn btn-outline-dark">Call for Delivery</a>
+      <a href="#full-menu" class="btn btn-primary">Order Now</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="container hero-content">
+    <span class="hero-badge">⭐ 4.0 Rated on Google · Nehru Place</span>
+    <h1>Authentic Punjabi Flavors in the Heart of Nehru Place.</h1>
+    <p>Delicious, hearty vegetarian meals served with warm hospitality. Join us for dine-in, or get it delivered fresh to your door!</p>
+    <div class="hero-btns">
+      <a href="#full-menu" class="btn btn-primary">View Full Menu</a>
+      <a href="tel:+919711369617" class="btn btn-outline">📞 Call +91 97113 69617</a>
+    </div>
+  </div>
+</section>
+
+<section class="features" id="about">
+  <div class="container">
+    <span class="section-tag">Why Choose Us</span>
+    <h2 class="section-title">A Taste of Punjab, Made With Care</h2>
+    <p class="section-sub">Every dish is prepared fresh, in a relaxed setting built for good food and good company.</p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🌿</div>
+        <h3>100% Vegetarian Delights</h3>
+        <p>A full menu of pure vegetarian Punjabi classics, made fresh daily.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">☀️</div>
+        <h3>Comfortable Outdoor Seating</h3>
+        <p>Relax in our casual outdoor area, perfect for a leisurely meal.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🛍️</div>
+        <h3>Quick Takeaway & Delivery</h3>
+        <p>Craving comfort food at home or the office? We've got you covered.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🕒</div>
+        <h3>Open Daily, 11 AM – 8 PM</h3>
+        <p>Every day of the week, so your Punjabi Khana cravings are always met.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="menu-section" id="highlights">
+  <div class="container">
+    <span class="section-tag">Signature Dishes</span>
+    <h2 class="section-title">Menu Highlights</h2>
+    <p class="section-sub">A taste of what's waiting for you — hearty, wholesome, and full of authentic Punjabi flavor.</p>
+
+    <div class="menu-grid">
+      <div class="menu-card">
+        <img src="punjabi-thali.png" alt="Punjabi Thali platter">
+        <div class="menu-card-body">
+          <h3>Punjabi Thali</h3>
+          <p>A complete feast — dal, sabzi, paneer, fresh rotis, rice, salad, and a sweet, served on one plate.</p>
+          <span class="menu-tag">Best Seller</span>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="paneer-specials.png" alt="Paneer specials">
+        <div class="menu-card-body">
+          <h3>Paneer Specials</h3>
+          <p>Melt-in-the-mouth paneer tikka, butter paneer, and kadai paneer simmered in rich, spiced gravies.</p>
+          <span class="menu-tag">Crowd Favorite</span>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="dal-makhani.png" alt="Dal Makhani in a handi">
+        <div class="menu-card-body">
+          <h3>Dal Makhani</h3>
+          <p>Slow-cooked black lentils, finished with cream and butter — the ultimate comfort food.</p>
+          <span class="menu-tag">Signature</span>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="breads-desserts.png" alt="Fresh breads and desserts">
+        <div class="menu-card-body">
+          <h3>Fresh Breads & Desserts</h3>
+          <p>Tandoori rotis and naans straight from the oven, paired with warm gulab jamun to finish.</p>
+          <span class="menu-tag">Must Try</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="full-menu-section" id="full-menu">
+  <div class="container">
+    <div class="center">
+      <span class="section-tag">Dine-in & Takeaway</span>
+      <h2 class="section-title">Explore Our Full Menu</h2>
+      <p class="section-sub">Authentic Punjabi flavors, fresh and delicious.</p>
+    </div>
+
+    <div class="full-menu-grid">
+      <!-- Column 1 -->
+      <div class="menu-column">
+        
+        <div class="menu-category">
+          <h3>Special</h3>
+          <div class="menu-list-item"><span class="item-name">Chole Bhature</span><span class="item-dots"></span><span class="item-price">₹ 100</span></div>
+          <div class="menu-list-item"><span class="item-name">Chole Puri</span><span class="item-dots"></span><span class="item-price">₹ 100</span></div>
+          <div class="menu-list-item"><span class="item-name">Gulab Jamun</span><span class="item-dots"></span><span class="item-price">₹ 25</span></div>
+          <div class="menu-list-item"><span class="item-name">Paneer Bread</span><span class="item-dots"></span><span class="item-price">₹ 40</span></div>
+          <div class="menu-list-item"><span class="item-name">Aloo Bread</span><span class="item-dots"></span><span class="item-price">₹ 30</span></div>
+          <div class="menu-list-item"><span class="item-name">Lassi</span><span class="item-dots"></span><span class="item-price">₹ 40</span></div>
+          <div class="menu-list-item"><span class="item-name">Raita</span><span class="item-dots"></span><span class="item-price">₹ 20</span></div>
+          <div class="menu-list-item"><span class="item-name">Paneer Kulcha with Chole</span><span class="item-dots"></span><span class="item-price">₹ 120</span></div>
+          <div class="menu-list-item"><span class="item-name">Mix Kulcha with Chole</span><span class="item-dots"></span><span class="item-price">₹ 120</span></div>
+          <div class="menu-list-item"><span class="item-name">Aloo Kulcha with Chole</span><span class="item-dots"></span><span class="item-price">₹ 100</span></div>
+        </div>
+
+        <div class="menu-category">
+          <h3>Thali</h3>
+          <div class="menu-list-item"><span class="item-name">Deluxe Thali</span><span class="item-dots"></span><span class="item-price">₹ 180</span></div>
+          <div class="menu-list-item"><span class="item-name">Executive Thali</span><span class="item-dots"></span><span class="item-price">₹ 160</span></div>
+          <div class="menu-list-item"><span class="item-name">Naan Thali</span><span class="item-dots"></span><span class="item-price">₹ 200</span></div>
+        </div>
+
+        <div class="menu-category">
+          <h3>Roti & Rice</h3>
+          <div class="menu-list-item"><span class="item-name">4 Pc. Tawa Roti</span><span class="item-dots"></span><span class="item-price">₹ 30</span></div>
+          <div class="menu-list-item"><span class="item-name">Tandoori Roti Per Pc.</span><span class="item-dots"></span><span class="item-price">₹ 15</span></div>
+          <div class="menu-list-item"><span class="item-name">Lachha Parantha</span><span class="item-dots"></span><span class="item-price">₹ 40</span></div>
+          <div class="menu-list-item"><span class="item-name">Butter Nan</span><span class="item-dots"></span><span class="item-price">₹ 30</span></div>
+          <div class="menu-list-item"><span class="item-name">Only Rice</span><span class="item-dots"></span><span class="item-price">₹ 50</span></div>
+        </div>
+
+        <div class="menu-category">
+          <h3>Main Course (Vegetable)</h3>
+          <div class="menu-list-item"><span class="item-name">Shahi Paneer</span><span class="item-dots"></span><span class="item-price">₹ 80</span></div>
+          <div class="menu-list-item"><span class="item-name">Palak Paneer</span><span class="item-dots"></span><span class="item-price">₹ 80</span></div>
+          <div class="menu-list-item"><span class="item-name">Mutter Paneer</span><span class="item-dots"></span><span class="item-price">₹ 80</span></div>
+          <div class="menu-list-item"><span class="item-name">Soya Chap</span><span class="item-dots"></span><span class="item-price">₹ 70</span></div>
+          <div class="menu-list-item"><span class="item-name">Rajma</span><span class="item-dots"></span><span class="item-price">₹ 70</span></div>
+          <div class="menu-list-item"><span class="item-name">Dal Makhni</span><span class="item-dots"></span><span class="item-price">₹ 70</span></div>
+          <div class="menu-list-item"><span class="item-name">Kadi Pakoda</span><span class="item-dots"></span><span class="item-price">₹ 70</span></div>
+          <div class="menu-list-item"><span class="item-name">Aloo Mutter</span><span class="item-dots"></span><span class="item-price">₹ 70</span></div>
+          <div class="menu-list-item"><span class="item-name">Shahi Kofta</span><span class="item-dots"></span><span class="item-price">₹ 70</span></div>
+          <div class="menu-list-item"><span class="item-name">Chole</span><span class="item-dots"></span><span class="item-price">₹ 70</span></div>
+          <div class="menu-list-item"><span class="item-name">Yellow Dal</span><span class="item-dots"></span><span class="item-price">₹ 70</span></div>
+          <div class="menu-list-item"><span class="item-name">Mix Vegetable</span><span class="item-dots"></span><span class="item-price">₹ 80</span></div>
+          <div class="menu-list-item"><span class="item-name">Palak Kofta</span><span class="item-dots"></span><span class="item-price">₹ 70</span></div>
+        </div>
+
+      </div>
+
+      <!-- Column 2 -->
+      <div class="menu-column">
+        
+        <div class="menu-category">
+          <h3>Rice Combo Menu</h3>
+          <div class="menu-list-item"><span class="item-name">Shahi Paneer With Rice</span><span class="item-dots"></span><span class="item-price">₹ 110</span></div>
+          <div class="menu-list-item"><span class="item-name">Palak Paneer With Rice</span><span class="item-dots"></span><span class="item-price">₹ 110</span></div>
+          <div class="menu-list-item"><span class="item-name">Mutter Paneer With Rice</span><span class="item-dots"></span><span class="item-price">₹ 110</span></div>
+          <div class="menu-list-item"><span class="item-name">Soya Chaap With Rice</span><span class="item-dots"></span><span class="item-price">₹ 110</span></div>
+          <div class="menu-list-item"><span class="item-name">Rajma With Rice</span><span class="item-dots"></span><span class="item-price">₹ 100</span></div>
+          <div class="menu-list-item"><span class="item-name">Dal Makhni With Rice</span><span class="item-dots"></span><span class="item-price">₹ 100</span></div>
+          <div class="menu-list-item"><span class="item-name">Kadi Pakoda With Rice</span><span class="item-dots"></span><span class="item-price">₹ 100</span></div>
+          <div class="menu-list-item"><span class="item-name">Aloo Mutter With Rice</span><span class="item-dots"></span><span class="item-price">₹ 100</span></div>
+          <div class="menu-list-item"><span class="item-name">Shahi Kofta With Rice</span><span class="item-dots"></span><span class="item-price">₹ 100</span></div>
+          <div class="menu-list-item"><span class="item-name">Chole With Rice</span><span class="item-dots"></span><span class="item-price">₹ 100</span></div>
+          <div class="menu-list-item"><span class="item-name">Yellow Dal With Rice</span><span class="item-dots"></span><span class="item-price">₹ 100</span></div>
+          <div class="menu-list-item"><span class="item-name">Mix Vegetable With Rice</span><span class="item-dots"></span><span class="item-price">₹ 110</span></div>
+          <div class="menu-list-item"><span class="item-name">Paneer Prantha</span><span class="item-dots"></span><span class="item-price">₹ 120</span></div>
+          <div class="menu-list-item"><span class="item-name">Mixed Parantha</span><span class="item-dots"></span><span class="item-price">₹ 120</span></div>
+          <div class="menu-list-item"><span class="item-name">Onion Parantha</span><span class="item-dots"></span><span class="item-price">₹ 120</span></div>
+          <div class="menu-list-item"><span class="item-name">Aloo Parantha</span><span class="item-dots"></span><span class="item-price">₹ 100</span></div>
+          <div class="menu-list-item"><span class="item-name">Punjabi Platter</span><span class="item-dots"></span><span class="item-price">₹ 180</span></div>
+        </div>
+
+        <div class="menu-category">
+          <h3>Roti Combo Menu</h3>
+          <div class="menu-list-item"><span class="item-name">Shahi Paneer + 2 Butter Nan</span><span class="item-dots"></span><span class="item-price">₹ 140</span></div>
+          <div class="menu-list-item"><span class="item-name">Rajma + 2 Butter Nan</span><span class="item-dots"></span><span class="item-price">₹ 130</span></div>
+          <div class="menu-list-item"><span class="item-name">Chole + 2 Butter Nan</span><span class="item-dots"></span><span class="item-price">₹ 130</span></div>
+          <div class="menu-list-item"><span class="item-name">Shahi Paneer 2 Tandori Roti/4 Tawa Roti</span><span class="item-dots"></span><span class="item-price">₹ 110</span></div>
+          <div class="menu-list-item"><span class="item-name">Palak Paneer 2 Tandori Roti/4 Tawa Roti</span><span class="item-dots"></span><span class="item-price">₹ 110</span></div>
+          <div class="menu-list-item"><span class="item-name">Mutter Paneer 2 Tandori Roti/4 Tawa Roti</span><span class="item-dots"></span><span class="item-price">₹ 110</span></div>
+          <div class="menu-list-item"><span class="item-name">Soya Chaap 2 Tandori Roti/4 Tawa Roti</span><span class="item-dots"></span><span class="item-price">₹ 110</span></div>
+          <div class="menu-list-item"><span class="item-name">Rajma With Roti</span><span class="item-dots"></span><span class="item-price">₹ 100</span></div>
+          <div class="menu-list-item"><span class="item-name">Dal Makhni With Roti</span><span class="item-dots"></span><span class="item-price">₹ 100</span></div>
+          <div class="menu-list-item"><span class="item-name">Kadi Pakoda With Roti</span><span class="item-dots"></span><span class="item-price">₹ 100</span></div>
+          <div class="menu-list-item"><span class="item-name">Aloo Mutter With Roti</span><span class="item-dots"></span><span class="item-price">₹ 100</span></div>
+          <div class="menu-list-item"><span class="item-name">Shahi Kofta With Roti</span><span class="item-dots"></span><span class="item-price">₹ 100</span></div>
+          <div class="menu-list-item"><span class="item-name">Chole With Roti</span><span class="item-dots"></span><span class="item-price">₹ 100</span></div>
+          <div class="menu-list-item"><span class="item-name">Yellow Dal With Roti</span><span class="item-dots"></span><span class="item-price">₹ 100</span></div>
+          <div class="menu-list-item"><span class="item-name">Mix Vegetable With Roti</span><span class="item-dots"></span><span class="item-price">₹ 110</span></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="center menu-cta">
+      <a href="tel:+919711369617" class="btn btn-primary">Call to Order — +91 97113 69617</a>
+    </div>
+  </div>
+</section>
+
+<section class="testimonial">
+  <div class="container">
+    <div class="rating-badge">
+      <span class="stars">★★★★☆</span>
+      <span>4.0 out of 5 on Google</span>
+    </div>
+    <blockquote>
+      "Friendly staff, attentive service, and a comfortable atmosphere make this a great choice for a memorable meal."
+    </blockquote>
+    <cite>— A Google Reviewer</cite>
+  </div>
+</section>
+
+<footer id="location">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">🍛 Punjabi Khana</div>
+        <p>Authentic North Indian vegetarian food, served with warmth in the heart of Nehru Place, New Delhi.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#highlights">Signature Dishes</a></li>
+          <li><a href="#full-menu">Full Menu</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#location">Location</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col" id="contact">
+        <h4>Contact & Hours</h4>
+        <p>📍 G-4, Aggarwal Bhawan, 35-36, Nehru Place, New Delhi - 110019</p>
+        <p>📞 <a href="tel:+919711369617">+91 97113 69617</a>, <a href="tel:+9198713772122">+91 98713 772122</a></p>
+        <p>🕒 Mon – Sun: 11:00 AM – 8:00 PM</p>
+        <p>🍽️ Dine-in · Takeout · Delivery</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Find Us Here</h4>
+        <div class="map-embed">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14018.74542928061!2d77.2317885871582!3d28.549145599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3cf745a0b8d%3A0xbfc27a8c3db3bb6f!2sPunjabi%20Khana!5e0!3m2!1sen!2sin!4v1782995433775!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 Punjabi Khana. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-cta-bar">
+  <div class="row">
+    <a href="tel:+919711369617" class="btn btn-outline-dark">📞 Call</a>
+    <a href="#full-menu" class="btn btn-primary">🛍️ Order Now</a>
+  </div>
+</div>
+
+<script>
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const navLinks = document.getElementById('navLinks');
+
+  hamburgerBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+</script>
+
+</body>
+</html>
